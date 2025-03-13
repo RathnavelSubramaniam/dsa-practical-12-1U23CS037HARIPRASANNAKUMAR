@@ -16,15 +16,29 @@ public class LinkedStack {
     }
     public boolean isEmpty()
     {
-        // TYPE YOUR CODE HERE
+        if(top==null)
+ return true;
+ else
+ return false;
     }
     public void push(int data) 
     {
-         // TYPE YOUR CODE HERE    
+         Node newNode = new Node(data);
+ newNode.next = top;
+ top = newNode;  
 }
     public int pop() 
     {
-        // TYPE YOUR CODE HERE
+        int data=-1;
+ if (isEmpty()) {
+ System.out.print("\n STACK IS UNDERFLOW");
+ }
+ else
+ {
+ data=top.data;
+ top = top.next;
+ }
+ return data;
     }
      public static void main(String[] args) {
         LinkedStack stack = new LinkedStack();
@@ -83,4 +97,3 @@ public void displayStack() {
     System.out.println("null");
 }
 }
-
